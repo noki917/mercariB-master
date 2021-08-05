@@ -1,0 +1,250 @@
+.alert{
+  color:$Red;
+  font-weight: bold;
+  text-align: center;
+}
+
+.sell{
+  &-contents{
+    max-width: 700px;
+    padding:40px;
+    background:$White;
+    margin:0 auto;
+    border-bottom: solid thin $Gray;
+    @include clearfix;
+    &-label{
+      color:gray;
+      font-size: 14px;
+      font-weight:bold;
+      float:left;
+    }
+    &__caution{
+      font-size: 14px;
+      line-height: 1.5;
+      &-space{
+        height:40px;
+      }
+    }
+    &__comment{
+      font-size: 12px;
+      margin-top: 15px;
+    }
+    &-brand{
+      padding:16px 8px;
+      width:100%;
+      font-size: 14px;
+      &:hover{
+        background-color: #b3d4fc;
+        color:white;
+        text-shadow:none;
+      }
+    }
+  }
+  &-form{
+    border:thin solid $Gray;
+    @include clearfix;
+    &-box{
+      margin-top:40px;
+      width: 400px;
+      float:right;
+    }
+    &-title{
+      font-size:16px;
+      font-weight: bold;
+    }
+    &-sub_title{
+      font-weight: bold;
+      font-size:14px;
+      &-price{
+        font-size:14px;
+        margin:13px 0;
+        font-weight: bold;
+      }
+    }
+    &-price{
+      @include clearfix;
+      height:90px;
+      border-bottom:thin solid $Gray;
+      &_left{
+        float:left;
+        padding-top:20px;
+        width:100px;
+      }
+      &_right{
+        float:right;
+      }
+      &-fee{
+        height:40px;
+        @include clearfix;
+        border-bottom:thin solid $Gray;
+        &-text{
+          float:left;
+          font-size:12px;
+        }
+        &-num{
+          float:right;
+        }
+      }
+      &-gains{
+          height:40px;
+          @include clearfix;
+          font-weight: bold;
+          font-size: 16px;
+          margin-top: 20px;
+        &-text{
+          float:left;
+        }
+        &-num{
+          float:right;
+        }
+      }
+    }
+  }
+  &-dropbox{
+    &_container{
+      margin-top: 16px;
+      height:186px;
+      width:100%;
+      float:left;
+    }
+    &-items{
+      height:100%;
+      float: left;
+      background: white;
+      border-right: thin dashed $Gray;
+      @include clearfix;
+      &_container{
+        height:100%;
+        width:140px;
+        text-align: center;
+        background: $Lightgray;
+        border:thin dashed $Gray;
+        float:left;
+        position:relative;
+        margin-right: 14px;
+      }
+      &-figure{
+        height:70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &-btn{
+        height:30%;
+        padding-top: 16px;
+        width:50%;
+        border: thin solid $Gray;
+        color:$Lightblue;
+        float:left;
+      }
+    }
+    &-uploader{
+        height:100%;
+      &_container{
+        .visible-pc{
+          width:100%;
+          text-align: center;
+          height: 100%;
+          padding:50px 0;
+          background: $Lightgray;
+          border:thin dashed $Gray;
+          cursor: pointer;
+          cursor: hand;
+        }
+      }
+    }
+  }
+}
+
+
+.hidden {
+  visibility: hidden;
+}
+
+ul.brand-search-result{
+  overflow: auto;
+  position: absolute;
+  background: $White;
+  z-index: 10;
+  max-height: 280px;
+  width:400px;
+  box-shadow:0 0 4px 0 rgba(0,0,0,0.64);
+}
+
+
+h2.l-single-head{
+  font-weight: bold;
+  text-align: center;
+  font-size:22px;
+  width:100%;
+}
+span.form-require.sell{
+  display: inline-block;
+  font-size:12px;
+  font-weight: bold;
+}
+p.btn.btn__gray{
+  @extend.btn__red;
+  width:280px;
+  margin:23px auto 0;
+  background: $Gray;
+}
+a.text-blue{
+  color:$Lightblue;
+}
+
+input.sell-form-text_field{
+  border-radius: 5px;
+  border: thin solid $Gray;
+  margin-top:8px;
+  &:focus{
+    border-color:$Lightblue;
+    outline: 0;
+  }
+}
+
+input[type="number"].sell-form-text_number{
+  @extend input.sell-form-text_field;
+  width:160px;
+  text-align: right;
+  &::-webkit-outer-spin-button,&::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  }
+}
+
+textarea.sell-form-text_area{
+  @extend input.sell-form-text_field;
+  border-radius:none;
+  padding:10px;
+  height:120px;
+  width:100%;
+}
+
+.sell-form-select select{
+  @extend input.sell-form-text_field;
+  background: none transparent;
+  vertical-align: middle;
+  font-size: inherit;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  padding:0 16px ;
+  width:100%;
+  height:46px;
+}
+.form-arbitrary.sell{
+  @extend .form-require;
+  background: gray;
+  border-color: gray;
+}
+@media screen and (max-width: 700px) {
+  .sell-dropbox-items_container{
+    width:60px;
+  }
+}
+.sell-contents__recommend_price{
+  width: 100%;
+  font-size: 12px;
+  text-align: right;
+  color: $Gray;
+}

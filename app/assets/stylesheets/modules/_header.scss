@@ -1,0 +1,161 @@
+.pc-header {
+  height: 90px;
+  width: 100%;
+  background-color: $White;
+
+  &-inner {
+    height: 82px;
+    width: 70%;
+    padding-top: 8px;
+    margin: 0 auto;
+    background-color: $White;
+    img.l-left {
+      height: 36px;
+      width: 134px;
+      float: left;
+      display: inline-block;
+      line-height: 36px;
+    }
+
+    .pc-header-form.l-right {
+      height: 36px;
+      width: calc(100% - (134px + 16px)); /*仮*/
+      background-color: $White;
+      float: right;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      line-height: 36px;
+      .input-keyword {
+        height: 30px;
+        width: calc(100% - 36px);
+        padding:9px 32px 9px 8px;
+        border: none;
+      }
+
+      .icon-search {
+        height: 34px;
+        width: 34px;
+        float: right;
+        border-color: white;
+      }
+    }
+    .pc-header-nav-box.clearfix {
+      height: 38px;
+      width: 100%;
+      margin-top: 44px;
+      background-color: $White;
+      box-sizing: border-box;
+      nav.list-left {
+        width: 250px;
+        float: left;
+        font: 66.66667% sans-serif;
+        line-height: 32px;
+        padding: 0;
+        margin: 0;
+        ul.pc-header-nav-l {
+          width: 50%;
+          float: left;
+          background-color:$White;
+          font: 66.66667% sans-serif;
+          line-height: 38px;
+          padding: 0;
+          margin: 0;
+          text-align: left;
+          // position: relative;
+        }
+      }
+
+      nav.list-right {
+        height: 38px;
+        width: 430px;
+        float: right;
+        .sp-header-btn {//新規会員登録
+          height: 32px;
+          width:97.5px;
+          float: right;
+          font: 66.66667% sans-serif;
+          text-align: center;
+          line-height: 32px;
+          border-radius: 5px;
+          padding: 0;
+          float: right;
+        }
+        .btn-red {//ログイン
+          color: $White;
+          background-color: $Red;
+        }
+        .header-signup {//新規会員登録
+          color: #0099e8;
+          border: solid 1px #0099e8;
+          margin-left: 5px;
+        }
+        .nav_mypage_icon {
+          height: 32px;
+          border-radius: 50%;
+          float: left;
+        }
+        .nav-mypage {
+          height: 38px;
+          width: 70px;
+          float: left;
+          font: 66.66667% sans-serif;
+          text-align: center;
+          line-height: 32px;
+          color: #333;
+        }
+        .fa-bell {
+          height: 38px;
+          float: left;
+          line-height: 32px;
+          padding-left: 10px;
+          font-weight: 400;
+        }
+        .nav-notification {
+          height: 38px;
+          width: 56px;
+          float: left;
+          font: 66.66667% sans-serif;
+          text-align: center;
+          line-height: 32px;
+          color: #333;
+        }
+        .fa-check {
+          height: 38px;
+          float: left;
+          line-height: 32px;
+          padding-left: 10px;
+        }
+        .nav-todo{
+          height: 38px;
+          width: 85px;
+          float: left;
+          font: 66.66667% sans-serif;
+          text-align: center;
+          line-height: 32px;
+          color: #333;
+        }
+        .fa-camera{
+          height: 38px;
+          float: left;
+          line-height: 32px;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+.bread-crumbs {
+  height: 50px;
+  width: 100%;
+  background-color: $White;
+  padding: 17px 0 16px;
+  white-space: normal;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  border-top: 1px solid #eee;
+  font: 66.66667% sans-serif;
+  &_box {
+     width: 70%;
+    margin: 0 auto;
+  }
+}

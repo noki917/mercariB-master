@@ -1,0 +1,58 @@
+.btn {
+  color: $White;
+  font-size: 14px;
+  line-height: 48px;
+  margin: 16px 0 0;
+  text-align: center;
+  width: 100%;
+  &__half {
+    @extend .btn;
+    float: right;
+    width:45%;
+  }
+  &__clear {
+    @extend .btn__half;
+    background-color:$Gray;
+    float: left;
+  }
+  &__blue {
+    background-color:$ButtonBlue;
+  }
+  &__red {
+    background-color:$Red;
+    &:active{
+      background:gray;
+    }
+  }
+  &__soldout{
+    background-color:$Gray;
+    font-size: 24px;
+    line-height: 60px;
+    margin-top: 10px;
+    font-weight: bold;
+    display: block;
+  }
+  &__mail {
+    background-color:$ThinGray;
+    color:$Black;
+    margin-bottom:16px;
+    position:relative;
+  }
+  &__sns {
+    position:relative;
+    &--facebook{
+      background-color:$Navy;
+    }
+    &--google{
+      background-color:$Rouge;
+      margin-top: 16px;
+    }
+  }
+}
+
+.icon {
+  position: absolute;
+    left:16px;
+    top:30%;
+  font-size:18px;
+}

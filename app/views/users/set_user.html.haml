@@ -1,0 +1,61 @@
+= render 'home/header'
+.l-contener
+  .mypage
+    .mypage_contents
+      .profile
+        %h4.profile__title 本人情報の登録
+        %p.profile__text お客さまのあんしん・あんぜんな取引のため、本人情報のご登録をお願いしております。
+        .profile__intro-box
+          = form_for current_user,url: {action: :update} do |f|
+            = f.fields_for :address do |add_f|
+              .form
+                = add_f.label [:first_name, :last_name], "お名前"
+                %span.form-require 必須
+                = add_f.text_field :first_name, placeholder: "例)山田", value: current_user.address.first_name, class: "form__input"
+                = add_f.text_field :last_name, placeholder: "例)彩", value: current_user.address.last_name, class: "form__input"
+              .form
+                = add_f.label [:first_name_phonetic, :last_name_phonetic], "お名前カナ"
+                %span.form-require 必須
+                = add_f.text_field :first_name_phonetic, placeholder: "例)ヤマダ", value: current_user.address.first_name_phonetic, class: "form__input"
+                = add_f.text_field :last_name_phonetic, placeholder: "例)アヤ", value: current_user.address.last_name_phonetic, class: "form__input"
+              .form
+                = add_f.label :postal_code, "郵便番号"
+                %span.form-arbitrary 任意
+                = add_f.text_field :postal_code, placeholder: "例)123-4567", value: current_user.address.postal_code, class: "form__input", id: "address_zip"
+              .form
+                = add_f.label :prefecture, "都道府県"
+                %span.form-require 必須
+                .select-wrap
+                  = add_f.collection_select :prefecture, JpPrefecture::Prefecture.all, :code, :name, {}, { class: "form__select" , id: "address_prefecture_name"}
+              .form
+                = add_f.label :municipality, "市区町村"
+                %span.form-require 必須
+                = add_f.text_field :municipality, placeholder: "例)横浜市緑区", value: current_user.address.municipality, class: "form__input", id:"address_city"
+              .form
+                = add_f.label :address_number, "番地"
+                %span.form-require 必須
+                = add_f.text_field :address_number, placeholder: "例)青山1-1-1", value: current_user.address.address_number, class: "form__input", id:"address_street"
+              .form
+                = add_f.label :building_name, "建物名"
+                = add_f.text_field :building_name, placeholder: "例)柳ビル103", value: current_user.address.building_name, class: "form__input"
+            .form
+              = f.label [:birth_year, :birth_month, :birth_day], "生年月日"
+              %span.form-require 必須
+              %br
+              .birth_wrap
+                .select-wrap
+                  = f.select :birth_year, options_for_select(1900..2019), {}, { class: "form__select" }
+                年
+              .birth_wrap
+                .select-wrap
+                  = f.select :birth_year, options_for_select(1..12), {}, { class: "form__select" }
+                月
+              .birth_wrap
+                .select-wrap
+                  = f.select :birth_year, options_for_select(1..31), {}, { class: "form__select" }
+                日
+            .actions
+              = f.submit "変更する", class: 'btn-red'
+  = render 'mypages/side_bar'
+= render 'home/footer'
+= render 'home/exhibit_btn'

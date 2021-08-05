@@ -1,0 +1,227 @@
+.single-container {
+  background-color: $Whitesmoke;
+  height:100vh;
+  .single-header {
+    text-align: center;
+    height:128px;
+    padding:40px 0 0;
+    h1 {
+      margin: 12px;
+      text-align:center;
+      img {
+        height:33px;
+        vertical-align: middle;
+        width:120px;
+        &:hover{
+          opacity:.6;
+        }
+      }
+    }
+  }
+
+  .single-main {
+    margin: 0 auto;
+
+    .login-panel {
+      background-color:$White;
+      max-width: 456px;
+      margin:0 auto;
+      padding: 0 32px;
+
+      .login-no-account {
+        border-bottom:1px solid $ThinGray;
+        padding:24px 0;
+        text-align:center;
+        p {
+          margin:0;
+        }
+      }
+      .login-form-inner {
+        padding:24px 0;
+      }
+    }
+    a {
+      color: $linkBlue;
+      text-decoration:none;
+    }
+    .signup-panel {
+      background-color:$White;
+      max-width: 456px;
+      margin:0 auto;
+      padding: 0 40px;
+      &__head {
+        border-bottom:1px solid $ThinGray;
+        margin: 0;
+        padding:24px 8px;
+        text-align:center;
+      }
+      &__inner {
+        padding:64px 0;
+      }
+    }
+  }
+
+  .single-footer {
+    height:250px;
+    padding:40px 0;
+    width:100%;
+
+    nav {
+      ul {
+        list-style-type: none;
+        text-align:center;
+        li {
+          a {
+            color:$Black;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .single-footer-logo {
+      height:65px;
+      width:80px;
+      margin:0 auto;
+      img {
+        display: block;
+        margin:0 auto;
+        vertical-align:middle;
+      }
+    }
+    p {
+      text-align:center;
+    }
+  }
+  .signup-bar {
+    .progress-bar {
+      list-style-type:none;
+      text-align:center;
+      li {
+        display:inline-block;
+        min-width: 60px;
+        .circle {
+          position:relative;
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          background: $Gray;
+          border-radius: 50px;
+          &:after , &:before{
+            content: '';
+            border-top:solid 1px $Gray;
+            position:absolute;
+            bottom: 5px;
+            width:60px;
+          }
+          &:before {
+            right: 50%;
+          }
+          &:after {
+            left: 50%;
+          }
+          &--first {
+            @extend .circle;
+            &:before {
+              border:none;
+            }
+          }
+          &--last {
+            @extend .circle;
+            &:after {
+              border:none;
+            }
+          }
+          &--red {
+            @extend .circle;
+            background-color:$Red;
+            &:before {
+              border-color: $Red;
+            }
+          }
+          &--through {
+            &:after{
+              border-color:$Red;
+              left: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+form {
+  .form-group {
+    margin-bottom: 24px;
+    input, select {
+      border: 1px solid $Black;
+      box-sizing: border-box;
+      font-size:16px;
+      height: 48px;
+      padding:8px 10px;
+    }
+    select.prefecture_select{
+      -webkit-appearance: button;
+      background-color:$White;
+      width:100%;
+      position: relative;
+    }
+    input {
+      width: 100%;
+    }
+    input.number_field {
+      display:block;
+      width:25%;
+    }
+    .g-recaptcha {
+      width:100%;
+    }
+  }
+}
+
+.form-require {
+  background-color:$Red;
+  border:solid $Red;
+  border-radius:2px;
+  box-sizing: border-box;
+  color:$White;
+  margin-right: 8px;
+  padding:1px 1px;
+}
+
+.form-arbitrary {
+  background-color:$Gray;
+  color:$White;
+  margin-right: 10px;
+  padding:2px 3px;
+}
+
+@media screen and (min-width: 768px) {
+  .single-container {
+    .single-header {
+      h1 {
+        display: inline-block;
+        img {
+          width: 185px;
+          height: 49px;
+          text-align:top;
+        }
+      }
+      .signup-bar {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+    .single-footer nav ul li{
+      display:inline-block;
+    }
+  }
+  form {
+    .form-group {
+      input.number_field {
+        display: inline-block;
+      }
+    }
+  }
+}

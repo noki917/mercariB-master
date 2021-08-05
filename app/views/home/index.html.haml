@@ -1,0 +1,16 @@
+= render 'header'
+
+%main.white
+  = image_tag('mercari_carousel.png', alt:"mercari", class: "top-main-visual")
+
+  %section.pickup-container
+    %h2.pickup-head
+      %a.pickup-head-name ピックアップカテゴリー
+    = render 'category_content'
+  %section.pickup-container
+    %h2.pickup-head
+      %a.pickup-head-name ピックアップブランド
+    = render 'brand_content'
+
+= render partial: 'footer'
+= render 'exhibit_btn'
